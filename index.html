@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Mother's Day, Mumma ❤️</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Great+Vibes&family=Hind:wght@400;500;600&family=Pacifico&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --cream: #FFF8F0;
+            --pink: #F8C8DC;
+            --lavender: #DCC6E0;
+            --beige: #F5E6D3;
+            --rose: #E8B4B8;
+            --brown: #B08968;
+            --white: #FAF7F2;
+            --text-dark: #5A4A42;
+            --tape-color: rgba(255, 255, 255, 0.6);
+        }
+
+        body {
+            background-color: var(--beige);
+            /* Soft paper texture overlay */
+            background-image: 
+                linear-gradient(rgba(245, 230, 211, 0.9), rgba(245, 230, 211, 0.9)),
+                url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+            color: var(--text-dark);
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Typography Classes */
+        .font-vibes { font-family: 'Great Vibes', cursive; }
+        .font-pacifico { font-family: 'Pacifico', cursive; }
+        .font-dancing { font-family: 'Dancing Script', cursive; }
+        .font-marathi { font-family: 'Hind', sans-serif; }
+
+        /* Scrapbook Elements */
+        .scrapbook-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            box-shadow: 0 0 40px rgba(0,0,0,0.05);
+            background-color: transparent;
+        }
+
+        .polaroid {
+            background: var(--white);
+            padding: 12px 12px 45px 12px;
+            box-shadow: 3px 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .polaroid:hover {
+            transform: scale(1.05) rotate(0deg) !important;
+            box-shadow: 5px 8px 20px rgba(0,0,0,0.15);
+            z-index: 20;
+        }
+
+        .polaroid img {
+            width: 100%;
+            height: auto;
+            border-radius: 2px;
+            filter: sepia(0.2) contrast(1.1);
+        }
+
+        .polaroid-text {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--text-dark);
+        }
+
+        /* Tape Effects */
+        .tape {
+            position: absolute;
+            width: 100px;
+            height: 25px;
+            background-color: var(--tape-color);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            backdrop-filter: blur(2px);
+            z-index: 10;
+            opacity: 0.8;
+            /* Washi tape texture */
+            background-image: repeating-linear-gradient(45deg, transparent, transparent 5px, rgba(0,0,0,0.02) 5px, rgba(0,0,0,0.02) 10px);
+        }
+        
+        .tape-pattern {
+            background-color: var(--pink);
+            background-image: radial-gradient(white 15%, transparent 16%), radial-gradient(white 15%, transparent 16%);
+            background-size: 10px 10px;
+            background-position: 0 0, 5px 5px;
+            opacity: 0.9;
+        }
+
+        /* Sticky Notes */
+        .sticky-note {
+            background: var(--cream);
+            padding: 20px;
+            box-shadow: 3px 4px 10px rgba(0,0,0,0.08);
+            position: relative;
+            border-bottom-right-radius: 30px 5px;
+        }
+        
+        .sticky-note::after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            right: 0;
+            bottom: 20px;
+            width: 200px;
+            height: 25px;
+            background: rgba(0, 0, 0, 0.2);
+            box-shadow: 2px 15px 15px rgba(0, 0, 0, 0.4);
+            transform: matrix(-1, -0.1, 0, 1, 0, 0);
+        }
+
+        .pin {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, #ff8a80, #d50000);
+            box-shadow: 2px 4px 6px rgba(0,0,0,0.2), inset -2px -2px 4px rgba(0,0,0,0.2);
+            z-index: 15;
+        }
+        
+        .pin::after {
+            content: '';
+            position: absolute;
+            top: 14px;
+            left: 7px;
+            width: 2px;
+            height: 12px;
+            background: #999;
+            z-index: -1;
+            box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        /* Notebook Paper Effect */
+        .notebook-paper {
+            background-color: var(--white);
+            background-image: 
+                linear-gradient(90deg, transparent 40px, #abced4 40px, #abced4 42px, transparent 42px),
+                linear-gradient(#e1e1e1 1px, transparent 1px);
+            background-size: 100% 100%, 100% 30px;
+            padding: 40px 20px 40px 60px;
+            border-radius: 4px;
+            box-shadow: 2px 4px 15px rgba(0,0,0,0.05);
+            position: relative;
+        }
+        
+        .torn-top {
+            position: absolute;
+            top: -10px; left: 0; right: 0; height: 20px;
+            background-image: radial-gradient(circle at 10px 0, transparent 10px, var(--white) 11px);
+            background-size: 20px 20px;
+            background-repeat: repeat-x;
+        }
+
+        /* Stitched Border Cards */
+        .stitched-card {
+            background-color: var(--white);
+            padding: 20px;
+            position: relative;
+            box-shadow: 2px 3px 8px rgba(0,0,0,0.05);
+        }
+        .stitched-card::before {
+            content: '';
+            position: absolute;
+            top: 8px; left: 8px; right: 8px; bottom: 8px;
+            border: 2px dashed var(--brown);
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        /* Timeline */
+        .timeline-container {
+            position: relative;
+            padding-left: 30px;
+        }
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 10px;
+            width: 4px; height: 100%;
+            background-image: repeating-linear-gradient(to bottom, var(--brown), var(--brown) 10px, transparent 10px, transparent 20px);
+            opacity: 0.4;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: -27px;
+            top: 15px;
+            width: 20px;
+            height: 20px;
+            background-color: var(--rose);
+            border: 3px solid var(--white);
+            border-radius: 50%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        /* Vinyl Animation */
+        .vinyl-record {
+            width: 80px;
+            height: 80px;
+            background: repeating-radial-gradient(#111, #111 4px, #222 5px, #222 6px);
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s;
+        }
+        .vinyl-record::after {
+            content: '';
+            width: 25px;
+            height: 25px;
+            background: var(--pink);
+            border-radius: 50%;
+            border: 2px solid #fff;
+        }
+        .vinyl-record::before {
+            content: '';
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: #fff;
+            border-radius: 50%;
+            z-index: 10;
+        }
+        .spin {
+            animation: spinRecord 4s linear infinite;
+        }
+        @keyframes spinRecord {
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(2deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        /* Petals and Hearts Animation */
+        .particle {
+            position: fixed;
+            pointer-events: none;
+            z-index: 100;
+            animation: fall linear forwards;
+        }
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: var(--beige); }
+        ::-webkit-scrollbar-thumb { background: var(--rose); border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--pink); }
+
+        /* Loader */
+        #loader {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: var(--beige);
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s;
+        }
+    </style>
+</head>
+<body class="antialiased relative">
+
+    <!-- Loading Screen -->
+    <div id="loader">
+        <i class="fa-solid fa-heart text-5xl text-[var(--rose)] animate-pulse mb-4"></i>
+        <p class="font-dancing text-2xl text-[var(--text-dark)]">Opening Scrapbook...</p>
+    </div>
+
+    <!-- Floating Background Elements container -->
+    <div id="particles-container"></div>
+
+    <main class="scrapbook-container relative z-10 overflow-hidden pb-20">
+        
+        <!-- Section 1: Cover Page -->
+        <section class="min-h-[80vh] flex flex-col items-center justify-center text-center relative p-8 mt-10 mb-20 fade-in">
+            <!-- Decorative corner pieces -->
+            <div class="absolute top-0 left-0 w-24 h-24 border-t-4 border-l-4 border-[var(--rose)] opacity-50 rounded-tl-xl"></div>
+            <div class="absolute top-0 right-0 w-24 h-24 border-t-4 border-r-4 border-[var(--rose)] opacity-50 rounded-tr-xl"></div>
+            <div class="absolute bottom-0 left-0 w-24 h-24 border-b-4 border-l-4 border-[var(--rose)] opacity-50 rounded-bl-xl"></div>
+            <div class="absolute bottom-0 right-0 w-24 h-24 border-b-4 border-r-4 border-[var(--rose)] opacity-50 rounded-br-xl"></div>
+
+            <div class="bg-[var(--white)] p-10 rounded-lg shadow-xl relative w-full max-w-2xl transform rotate-1">
+                <div class="tape tape-pattern top-[-10px] left-1/2 transform -translate-x-1/2 -rotate-2"></div>
+                
+                <h1 class="font-vibes text-6xl md:text-8xl text-[var(--rose)] mb-4 floating">Happy Mother's Day</h1>
+                <h2 class="font-dancing text-4xl text-[var(--text-dark)] mb-6">Mumma <span class="text-red-500">❤️</span></h2>
+                
+                <p class="font-marathi text-xl md:text-2xl text-[var(--brown)] italic mb-4">
+                    "आई म्हणजे प्रेम, काळजी आणि आपल्या आयुष्याची ताकद ✨"
+                </p>
+                <p class="font-poppins text-md text-gray-500 tracking-wide uppercase mt-6 border-t pt-4">
+                    A small scrapbook of our beautiful memories
+                </p>
+            </div>
+            
+            <div class="mt-16 animate-bounce">
+                <i class="fa-solid fa-chevron-down text-2xl text-[var(--brown)] opacity-50"></i>
+            </div>
+        </section>
+
+        <!-- Section 2: Photo Scrapbook -->
+        <section class="py-16 fade-in relative">
+            <h3 class="font-pacifico text-3xl md:text-4xl text-center mb-16 text-[var(--brown)]">
+                <i class="fa-solid fa-camera-retro mr-2 text-[var(--rose)]"></i> Captured Moments
+            </h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-16 px-4">
+                
+                <!-- Photo 1 -->
+                <div class="polaroid transform -rotate-3 place-self-center max-w-[300px]">
+                    <div class="tape top-[-10px] left-[-20px] -rotate-12"></div>
+                    <!-- Using placeholder images that fit the vintage aesthetic -->
+                    <img src="p1.jpg" alt="Mom and child" class="h-[250px] object-cover">
+                    <p class="polaroid-text font-dancing">Best day ever 💕</p>
+                </div>
+
+                <!-- Photo 2 -->
+                <div class="polaroid transform rotate-2 place-self-center mt-10 md:mt-0 max-w-[300px]">
+                    <div class="tape top-[-15px] right-[-10px] rotate-12 tape-pattern"></div>
+                    <img src="p2.jpg" alt="Vintage feeling" class="h-[250px] object-cover">
+                    <p class="polaroid-text font-dancing">Aai = Home 🏡</p>
+                    <i class="fa-solid fa-heart absolute bottom-12 right-4 text-red-400 opacity-50 text-3xl transform rotate-12"></i>
+                </div>
+
+                <!-- Photo 3 -->
+                <div class="polaroid transform -rotate-2 place-self-center mt-10 lg:mt-0 max-w-[300px]">
+                    <div class="tape top-[-5px] left-[30%] -rotate-2"></div>
+                    <img src="p3.jpg" alt="Flowers" class="h-[250px] object-cover">
+                    <p class="polaroid-text font-dancing">Forever my comfort person ✨</p>
+                </div>
+
+                <!-- Photo 4 -->
+                <div class="polaroid transform rotate-3 place-self-center mt-10 lg:mt-0 max-w-[300px]">
+                    <div class="tape top-[-10px] right-[10%] rotate-6"></div>
+                    <img src="p4.jpg" alt="Family moments" class="h-[250px] object-cover">
+                    <p class="polaroid-text font-dancing">Your hugs = Magic ✨</p>
+                </div>
+
+                <!-- Photo 5 -->
+                <div class="polaroid transform -rotate-1 place-self-center mt-10 max-w-[300px]">
+                    <div class="tape top-[-5px] left-[-15px] -rotate-12 tape-pattern"></div>
+                    <img src="p5.jpg" alt="Laughing together" class="h-[250px] object-cover">
+                    <p class="polaroid-text font-dancing">Our little moments ☕</p>
+                </div>
+
+                <!-- Photo 6 -->
+                <div class="polaroid transform rotate-1 place-self-center mt-10 max-w-[300px]">
+                    <div class="tape top-[5px] right-[20%] rotate-3"></div>
+                    <img src="p6.jpg" alt="Walking together" class="h-[250px] object-cover">
+                    <p class="polaroid-text font-marathi text-lg">माझा मार्गदर्शक 🌟</p>
+                </div>
+
+            </div>
+            
+            <!-- Random Doodles -->
+            <svg class="absolute top-[20%] right-[10%] w-16 h-16 opacity-30 text-[var(--brown)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path></svg>
+        </section>
+
+        <!-- Section 3: Handwritten Letter -->
+        <section class="py-20 fade-in flex justify-center">
+            <div class="notebook-paper w-full max-w-3xl transform rotate-1">
+                <div class="torn-top"></div>
+                <div class="tape top-[-10px] right-[20px] rotate-12"></div>
+                
+                <h3 class="font-pacifico text-2xl mb-6 text-[var(--rose)]">Dear Mumma,</h3>
+                
+                <div class="font-dancing text-2xl md:text-3xl leading-relaxed text-[var(--text-dark)] space-y-6">
+                    <p class="font-marathi">तू माझ्यासाठी जगातील सर्वात खास व्यक्ती आहेस ❤️</p>
+                    <p>No matter how old I get, or where life takes me, your love will always be my safe place. You've taught me strength, kindness, and how to smile through tough times.</p>
+                    <p class="font-marathi">तुझ्या एका मिठीत जगातील सर्व दुःख विसरायला होतं.</p>
+                    <p>Thank you for endless sacrifices, the warm meals, and believing in me when I didn't believe in myself.</p>
+                    
+                    <p class="text-right mt-8 pt-4">
+                        With infinite love,<br>
+                        <span class="text-[var(--rose)] font-bold text-3xl">Anushka and Mrunmayee</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Sticky Notes Wall & Traits -->
+        <section class="py-16 fade-in">
+            <div class="flex flex-col lg:flex-row gap-12">
+                
+                <!-- Special Traits (Left) -->
+                <div class="lg:w-1/3 space-y-6">
+                    <h3 class="font-pacifico text-3xl mb-8 text-[var(--brown)]">Why You Are Special</h3>
+                    
+                    <div class="stitched-card transform -rotate-2 bg-[var(--cream)]">
+                        <h4 class="font-dancing text-2xl"><i class="fa-solid fa-heart text-red-400 mr-2"></i> Caring</h4>
+                        <p class="font-poppins text-sm mt-2 text-gray-600">Always putting our needs before your own.</p>
+                    </div>
+                    
+                    <div class="stitched-card transform rotate-1 bg-[var(--lavender)] bg-opacity-30">
+                        <h4 class="font-dancing text-2xl"><i class="fa-solid fa-hand-sparkles text-yellow-500 mr-2"></i> Strong 🌸</h4>
+                        <p class="font-poppins text-sm mt-2 text-gray-600">The pillar of our family, handling everything with grace.</p>
+                    </div>
+                    
+                    <div class="stitched-card transform -rotate-1 bg-[var(--pink)] bg-opacity-30">
+                        <h4 class="font-dancing text-2xl"><i class="fa-solid fa-star text-orange-400 mr-2"></i> My Best Friend</h4>
+                        <p class="font-poppins text-sm mt-2 text-gray-600">The first person I want to call when anything happens.</p>
+                    </div>
+                </div>
+
+                <!-- Sticky Notes (Right) -->
+                <div class="lg:w-2/3">
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-6 relative p-4">
+                        
+                        <div class="sticky-note bg-yellow-100 transform rotate-3 mt-4">
+                            <div class="pin"></div>
+                            <p class="font-dancing text-xl text-center mt-2">Your food is my favorite cuisine! 🥘</p>
+                        </div>
+                        
+                        <div class="sticky-note bg-pink-100 transform -rotate-6">
+                            <div class="pin"></div>
+                            <p class="font-marathi text-lg text-center mt-2 font-medium">माझी पहिली गुरु 🙏</p>
+                        </div>
+                        
+                        <div class="sticky-note bg-blue-100 transform rotate-6 mt-8">
+                            <div class="pin"></div>
+                            <p class="font-dancing text-xl text-center mt-2">Miss your hugs! 🤗</p>
+                        </div>
+                        
+                        <div class="sticky-note bg-green-100 transform -rotate-3">
+                            <div class="pin"></div>
+                            <p class="font-dancing text-xl text-center mt-2">My forever shopping partner 🛍️</p>
+                        </div>
+
+                         <div class="sticky-note bg-purple-100 transform rotate-2 mt-4">
+                            <div class="pin"></div>
+                            <p class="font-marathi text-lg text-center mt-2 font-medium">तुझा आशीर्वाद हीच माझी संपत्ती ✨</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Timeline of Memories -->
+        <section class="py-16 fade-in max-w-2xl mx-auto">
+            <h3 class="font-pacifico text-3xl text-center mb-12 text-[var(--brown)]">A Little Journey</h3>
+            
+            <div class="timeline-container space-y-12">
+                
+                <div class="relative pl-8">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-[var(--white)] p-4 rounded shadow-sm inline-block transform rotate-1 border border-gray-100">
+                        <span class="text-xs font-bold text-[var(--rose)] uppercase">Childhood</span>
+                        <p class="font-dancing text-xl mt-1">Holding your hand to walk.</p>
+                    </div>
+                </div>
+
+                <div class="relative pl-8">
+                    <div class="timeline-dot" style="background-color: var(--lavender);"></div>
+                    <div class="bg-[var(--white)] p-4 rounded shadow-sm inline-block transform -rotate-1 border border-gray-100">
+                        <span class="text-xs font-bold text-[var(--rose)] uppercase">School Days</span>
+                        <p class="font-marathi text-lg mt-1">डब्यातील आवडीची भाजी.</p>
+                    </div>
+                </div>
+
+                <div class="relative pl-8">
+                    <div class="timeline-dot" style="background-color: var(--pink);"></div>
+                    <div class="bg-[var(--white)] p-4 rounded shadow-sm inline-block transform rotate-2 border border-gray-100">
+                        <span class="text-xs font-bold text-[var(--rose)] uppercase">Growing Up</span>
+                        <p class="font-dancing text-xl mt-1">Late night talks & advice.</p>
+                    </div>
+                </div>
+
+                <div class="relative pl-8">
+                    <div class="timeline-dot" style="background-color: var(--brown);"></div>
+                    <div class="bg-[var(--white)] p-4 rounded shadow-sm inline-block transform -rotate-2 border border-gray-100">
+                        <span class="text-xs font-bold text-[var(--rose)] uppercase">Today</span>
+                        <p class="font-dancing text-xl mt-1">Realizing you were always right! ❤️</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7 & 8: Quotes & Music -->
+        <section class="py-16 fade-in bg-[var(--white)] rounded-3xl shadow-lg my-10 p-8 border-4 border-dashed border-[var(--pink)] relative overflow-hidden">
+            <!-- Decorative flower SVG -->
+            <svg class="absolute top-[-20px] left-[-20px] w-32 h-32 text-[var(--pink)] opacity-30" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <path fill="currentColor" d="M44.7,-76.4C58.8,-69.2,71.8,-59.1,79.6,-45.8C87.4,-32.6,90,-16.3,87.6,-1.4C85.2,13.5,77.8,27.1,69.5,40.1C61.1,53.2,51.8,65.8,39.2,74.1C26.6,82.4,10.6,86.5,-4.4,89.5C-19.4,92.4,-38.8,94.2,-53.4,86.6C-68,78.9,-77.8,61.9,-84.6,44.2C-91.4,26.4,-95.1,7.9,-93.6,-10C-92.1,-27.9,-85.4,-45.3,-73.4,-57.8C-61.4,-70.3,-44.1,-78,-28.5,-80.7C-12.9,-83.4,1.1,-81.1,15.6,-80.3C30.2,-79.4,45.4,-79.9,44.7,-76.4Z" transform="translate(100 100)" />
+            </svg>
+
+            <div class="flex flex-col md:flex-row items-center justify-around z-10 relative">
+                
+                <!-- Quotes Carousel -->
+                <div class="w-full md:w-1/2 text-center mb-10 md:mb-0 h-32 flex items-center justify-center">
+                    <i class="fa-solid fa-quote-left text-3xl text-[var(--lavender)] absolute top-0 left-0 md:left-10 opacity-50"></i>
+                    <p id="quote-text" class="font-dancing text-3xl md:text-4xl text-[var(--brown)] transition-opacity duration-500">
+                        "Home is wherever Mom is."
+                    </p>
+                    <i class="fa-solid fa-quote-right text-3xl text-[var(--lavender)] absolute bottom-0 right-0 md:right-10 opacity-50"></i>
+                </div>
+
+                <!-- Music Player UI -->
+                <div class="bg-[var(--beige)] p-6 rounded-2xl shadow-inner flex items-center gap-6 border border-[var(--rose)] border-opacity-30">
+                    <div id="vinyl" class="vinyl-record"></div>
+                    <div>
+                        <p class="font-poppins font-semibold text-sm uppercase tracking-wider text-[var(--brown)]">Now Playing</p>
+                        <p class="font-dancing text-xl text-[var(--text-dark)] mb-2">Memories with Aai.mp3</p>
+                        <button id="play-btn" class="bg-[var(--rose)] text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-pink-400 transition-colors shadow-md">
+                            <i class="fa-solid fa-play"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 9: Surprise -->
+        <section class="py-20 text-center fade-in">
+            <h3 class="font-vibes text-5xl mb-6 text-[var(--rose)]">One last thing...</h3>
+            <button id="surprise-btn" class="font-poppins bg-white border-2 border-[var(--rose)] text-[var(--rose)] px-8 py-3 rounded-full text-lg font-semibold hover:bg-[var(--rose)] hover:text-white transition-all duration-300 shadow-lg transform hover:-translate-y-1">
+                Tap to Open ❤️
+            </button>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center pt-20 pb-10 border-t border-[var(--pink)] border-opacity-50 mt-10">
+            <div class="tape top-[-10px] left-1/2 transform -translate-x-1/2 rotate-1 bg-[var(--lavender)]"></div>
+            <p class="font-dancing text-2xl text-[var(--text-dark)]">
+                Made with infinite love for Mumma 💖
+            </p>
+            <p class="font-poppins text-xs mt-4 text-gray-400">Happy Mother's Day 2026</p>
+        </footer>
+
+    </main>
+
+    <!-- Surprise Modal Overlay -->
+    <div id="surprise-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex justify-center items-center backdrop-blur-sm transition-opacity duration-300 opacity-0">
+        <div class="bg-[var(--cream)] p-8 rounded-2xl shadow-2xl max-w-sm w-[90%] text-center relative transform scale-95 transition-transform duration-300" id="modal-content">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+                <i class="fa-solid fa-times text-xl"></i>
+            </button>
+            <div class="text-6xl mb-4 animate-bounce">💖</div>
+            <h2 class="font-pacifico text-3xl text-[var(--rose)] mb-4">Mumma,</h2>
+            <p class="font-dancing text-2xl text-[var(--text-dark)]">
+                Thank you for everything.<br>I love you to the moon and back! ✨
+            </p>
+            <div class="mt-6 font-marathi text-lg text-[var(--brown)] border-t border-[var(--pink)] pt-4">
+                माझ्या आयुष्यातील सर्वात सुंदर भेट म्हणजे 'तू' आहेस.
+            </div>
+        </div>
+    </div>
+
+    <!-- Script for Logic and Animations -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 1. Remove Loader
+            setTimeout(() => {
+                const loader = document.getElementById('loader');
+                loader.style.opacity = '0';
+                setTimeout(() => loader.style.display = 'none', 500);
+            }, 1500);
+
+            // 2. Intersection Observer for Fade-In animations
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); // Only animate once
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+            // 3. Rotating Quotes
+            const quotes = [
+                `"Home is wherever Mom is."`,
+                `"आईचे प्रेम अमूल्य आहे ❤️"`,
+                `"Every memory with you is precious."`,
+                `"Life doesn't come with a manual, it comes with a mother."`,
+                `"आई - शब्दांत न सांगता येणारी भावना ✨"`
+            ];
+            const quoteEl = document.getElementById('quote-text');
+            let quoteIdx = 0;
+
+            setInterval(() => {
+                quoteEl.style.opacity = '0';
+                setTimeout(() => {
+                    quoteIdx = (quoteIdx + 1) % quotes.length;
+                    
+                    // Change font based on language
+                    if(quotes[quoteIdx].includes('आई')) {
+                        quoteEl.className = 'font-marathi text-2xl md:text-3xl text-[var(--brown)] transition-opacity duration-500 font-medium';
+                    } else {
+                        quoteEl.className = 'font-dancing text-3xl md:text-4xl text-[var(--brown)] transition-opacity duration-500';
+                    }
+                    
+                    quoteEl.innerText = quotes[quoteIdx];
+                    quoteEl.style.opacity = '1';
+                }, 500);
+            }, 4000);
+
+            // 4. Fake Music Player logic
+            const playBtn = document.getElementById('play-btn');
+            const vinyl = document.getElementById('vinyl');
+            const icon = playBtn.querySelector('i');
+            let isPlaying = false;
+
+            playBtn.addEventListener('click', () => {
+                isPlaying = !isPlaying;
+                if (isPlaying) {
+                    icon.classList.remove('fa-play');
+                    icon.classList.add('fa-pause');
+                    vinyl.classList.add('spin');
+                } else {
+                    icon.classList.remove('fa-pause');
+                    icon.classList.add('fa-play');
+                    vinyl.classList.remove('spin');
+                }
+            });
+
+            // 5. Surprise Modal & Confetti
+            const surpriseBtn = document.getElementById('surprise-btn');
+            const modal = document.getElementById('surprise-modal');
+            const closeModal = document.getElementById('close-modal');
+            const modalContent = document.getElementById('modal-content');
+
+            function createHearts() {
+                const container = document.getElementById('particles-container');
+                const colors = ['#F8C8DC', '#E8B4B8', '#ff8a80', '#DCC6E0'];
+                
+                for (let i = 0; i < 40; i++) {
+                    const heart = document.createElement('div');
+                    heart.innerHTML = '❤️';
+                    heart.className = 'particle text-xl md:text-2xl';
+                    heart.style.left = Math.random() * 100 + 'vw';
+                    heart.style.top = -50 + 'px';
+                    heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+                    // Random fall duration between 3s and 6s
+                    heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                    // Random delay
+                    heart.style.animationDelay = Math.random() * 2 + 's';
+                    
+                    container.appendChild(heart);
+                    
+                    // Cleanup
+                    setTimeout(() => {
+                        heart.remove();
+                    }, 8000);
+                }
+            }
+
+            surpriseBtn.addEventListener('click', () => {
+                modal.classList.remove('hidden');
+                // Trigger reflow
+                void modal.offsetWidth;
+                modal.classList.remove('opacity-0');
+                modal.classList.add('opacity-100');
+                modalContent.classList.remove('scale-95');
+                modalContent.classList.add('scale-100');
+                
+                createHearts();
+            });
+
+            closeModal.addEventListener('click', () => {
+                modal.classList.remove('opacity-100');
+                modal.classList.add('opacity-0');
+                modalContent.classList.remove('scale-100');
+                modalContent.classList.add('scale-95');
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                }, 300);
+            });
+
+            // Close modal on outside click
+            modal.addEventListener('click', (e) => {
+                if(e.target === modal) {
+                    closeModal.click();
+                }
+            });
+
+            // 6. Ambient floating petals in background occasionally
+            setInterval(() => {
+                if(Math.random() > 0.5) {
+                    const container = document.getElementById('particles-container');
+                    const petal = document.createElement('div');
+                    petal.className = 'particle absolute w-3 h-3 bg-pink-200 rounded-full opacity-60';
+                    petal.style.borderRadius = '50% 0 50% 50%';
+                    petal.style.left = Math.random() * 100 + 'vw';
+                    petal.style.top = -20 + 'px';
+                    petal.style.animationDuration = (Math.random() * 5 + 5) + 's';
+                    container.appendChild(petal);
+                    setTimeout(() => petal.remove(), 10000);
+                }
+            }, 2000);
+
+        });
+    </script>
+</body>
+</html>
