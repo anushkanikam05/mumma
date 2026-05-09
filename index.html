@@ -546,6 +546,7 @@
                         <button id="play-btn" class="bg-[var(--rose)] text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-pink-400 transition-colors shadow-md">
                             <i class="fa-solid fa-play"></i>
                         </button>
+                        <audio id="audio" src="bgmusic.mp3"></audio>
                     </div>
                 </div>
             </div>
@@ -740,5 +741,17 @@
 
         });
     </script>
+    <script>
+const playBtn = document.getElementById("play-btn");
+const audio = document.getElementById("audio");
+
+playBtn.addEventListener("click", () => {
+    if (audio.paused) {
+        audio.play();
+    } else {
+        audio.pause();
+    }
+});
+</script>
 </body>
 </html>
